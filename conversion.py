@@ -9,8 +9,18 @@ Estructura basica, menu del programa
 """
 
 def menu():
-    print("Seleccione una opción que tipo de conversión necesita")
+    print("Seleccione una opción que tipo de conversión necesita:")
     print("               1.DD a DMS")
     print("               2.DMS a DD")
+    opcion=int(input())
+    if opcion==1:
+        pedir_datos_sexa()
+        
+
+def pedir_datos_sexa():
+    datsexalat=input('Ingrese latitud en sexagesimal (grados)')
+    datsexalon=input('Ingrese longitud en sexagesimal (grados)')
+    return datsexalat,datsexalon
+    
 
 menu()
