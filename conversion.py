@@ -18,9 +18,13 @@ def menu():
         
 
 def pedir_datos_sexa():
-    datsexalat=input('Ingrese latitud en sexagesimal (grados)')
-    datsexalon=input('Ingrese longitud en sexagesimal (grados)')
+    datsexalat=input('Ingrese latitud en sexagesimal (grados): ')
+    datsexalon=input('Ingrese longitud en sexagesimal (grados): ')
     return datsexalat,datsexalon
     
+def pedir_datos_deci():
+    datdeclat=input('Ingrese latitud en decimales: ')
+    datdeclon=input('Ingrese longitud en decimales: ')
+    return datdeclat,datdeclon
 
 menu()
