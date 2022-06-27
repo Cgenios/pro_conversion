@@ -45,13 +45,25 @@ def covern(dat1, dat2):
 
 #conversion de decimales a grados sexagesimales
 def coverdas(data):
+    #Asignacion de variables a argumentos
     lat=data[0] #Division para la conversion de la tupla
     lon=data[1] #División para la conversion de la tupla
     conlat=lat.split(sep='.') #Se utiliza un separador en python
     conlon=lon.split(sep='.') #Se utiliza un separador en python en estos casos el punto
-    print(conlat[0],conlon)
     
+    #print(conlat[0],conlon)
+    #Tratamiento con latitud en decimales a sexagecimales
+    conlat[1]=float("0."+conlat[1])*60
+    #print(conlat[1])
+    res=str(conlat[1]).split(sep='.')
+    seg=float("0."+res[1])*60
+    print("Los grados latitud: "+conlat[0]+"°"+" "+res[0]+"' "+str(seg)+"''")
     
-
+    #Tratamiento de datos en longitud
+    conlon[1]=float("0."+conlon[1])*60
+    #print(conlat[1])
+    res1=str(conlon[1]).split(sep='.')
+    seg1=float("0."+res1[1])*60
+    print("Los grados longitud: "+conlon[0]+"°"+" "+res1[0]+"' "+str(seg1)+"''")
 
 menu()
