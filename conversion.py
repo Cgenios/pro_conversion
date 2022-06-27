@@ -15,26 +15,43 @@ def menu():
     opcion=int(input())
     if opcion==1:
         #coversexa()
-        n1=pedir_datos_sexa()
-    print(n1,type(n1))
+        pedir_datos_sexa()
+    elif opcion==2:
+        pedir_datos_deci()
+    
     
 #peticion de datos en caso de ser sexagesimal 
 def pedir_datos_sexa():
     datsexalat=input('Ingrese latitud en sexagesimal (grados): ')
     datsexalon=input('Ingrese longitud en sexagesimal (grados): ')
-    return datsexalat,datsexalon
+    grados=covern(datsexalat,datsexalon)
+    return 0
+
+
 #peticion de datos en caso de ser decimal    
 def pedir_datos_deci():
     datdeclat=input('Ingrese latitud en decimales: ')
     datdeclon=input('Ingrese longitud en decimales: ')
-    return datdeclat,datdeclon
+    deci=covern(datdeclat,datdeclon)
+    coverdas(deci)
+    return 0
+
 
 #conversion a cadena de numeros ingresados
-def coversexa(dat1, dat2):
+def covern(dat1, dat2):
     xlat=str(dat1)
     xlon=str(dat2)
     return xlat,xlon
+
+#conversion de decimales a grados sexagesimales
+def coverdas(data):
+    lat=data[0] #Division para la conversion de la tupla
+    lon=data[1] #División para la conversion de la tupla
+    conlat=lat.split(sep='.') #Se utiliza un separador en python
+    conlon=lon.split(sep='.') #Se utiliza un separador en python en estos casos el punto
+    print(conlat[0],conlon)
     
-        
+    
+
 
 menu()
